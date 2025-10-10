@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".eaqc">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="282dp"
+        android:layout_height="265dp"
+        android:text="Em *É Assim que Começa*, Lily Bloom tenta seguir em frente após o divórcio de Ryle, seu ex-marido abusivo, enquanto administra sua floricultura e cuida da filha, Emerson. Ao reencontrar Atlas, seu antigo amor, ela vê a chance de recomeçar, mas precisa enfrentar a resistência de Ryle, que não aceita vê-la com outro homem — especialmente com Atlas. Narrado pelos dois protagonistas, o livro revela o passado de Atlas e mostra a luta de Lily para viver um novo amor, equilibrando coragem, superação e segundas chances. "
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="216dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

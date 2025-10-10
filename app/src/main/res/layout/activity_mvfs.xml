@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvfs">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="299dp"
+        android:layout_height="245dp"
+        android:text="Ao se mudar de cidade na adolescência, Priscila enfrenta o desafio de recomeçar em um lugar onde tudo e todos já parecem ter seu lugar. Inicialmente contrariada, ela percebe que essa mudança pode ser uma chance de se reinventar e escolher quem deseja ser. No entanto, ao longo do tempo, entende que o mais importante não é o lugar, mas as pessoas e o autoconhecimento. Esse livro, de Paula Pimenta, se passa no mesmo universo de *Fazendo Meu Filme* e mostra personagens conhecidos em uma nova fase, três anos antes dos eventos da série principal. "
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="216dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

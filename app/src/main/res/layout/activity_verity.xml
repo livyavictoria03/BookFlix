@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".verity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="282dp"
+        android:layout_height="265dp"
+        android:text="Lowen Ashleigh, uma escritora em dificuldades financeiras, aceita completar os livros de Verity Crawford, uma famosa autora incapacitada após um acidente. Ao se mudar para a casa da família para estudar as anotações de Verity, Lowen encontra uma autobiografia secreta com confissões perturbadoras, incluindo detalhes sobre a morte da filha da autora. Chocada, ela esconde o manuscrito de Jeremy, marido de Verity, mas, conforme se envolve emocionalmente com ele, começa a questionar se deve revelar a verdade que pode destruir sua visão sobre a esposa. "
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="216dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

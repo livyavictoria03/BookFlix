@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -8,9 +7,89 @@
     android:background="#C1CFDA"
     tools:context=".MainActivity">
 
-    <!-- Botão Home -->
+    <!-- ==== BOTÕES "SAIBA MAIS" CORRIGIDOS ==== -->
 
-    <!-- Botão Lembrete -->
+    <!-- Botão para o livro "Verity" (ligado à imageView2) -->
+    <Button
+        android:id="@+id/verity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Saiba Mais"
+        android:textColor="#000000 "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <!-- Botão para o livro "Os Sete Maridos..." (ligado à imageView3) -->
+    <Button
+        android:id="@+id/os7m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Saiba Mais"
+        android:textColor="#000000 "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <!-- Botão para o livro "É Assim Que Começa" (ligado à imageView4) -->
+    <Button
+        android:id="@+id/eaqc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Saiba Mais"
+        android:textColor="#000000 "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <!-- Botão para o livro "É Assim Que Acaba" (ligado à imageView5) -->
+    <Button
+        android:id="@+id/eaqa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Saiba Mais"
+        android:textColor="#000000 "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <!-- Botão para o livro "O Vilão Que Me Morde" (ligado à imageView6) -->
+    <Button
+        android:id="@+id/ovqmmv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Saiba Mais"
+        android:textColor="#000000 "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <!-- Botão para o livro "Minha Vida Fora de Série" (ligado à imageView7) -->
+    <Button
+        android:id="@+id/mvfs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Saiba Mais"
+        android:textColor="#000000 "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+
+    <!-- ==== RESTANTE DO SEU LAYOUT (sem alterações) ==== -->
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/botaoHome"
         android:layout_width="55dp"
@@ -25,8 +104,6 @@
         app:layout_constraintVertical_bias="0.971"
         app:rippleColor="@android:color/transparent"
         app:srcCompat="@drawable/botao1" />
-
-    <!-- Botão Adicionar -->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton8"
@@ -47,6 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        app:backgroundTint="#C1CFDA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.132"
@@ -54,15 +132,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.973"
         app:rippleColor="@android:color/transparent"
-        app:backgroundTint="#C1CFDA"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
-    <!-- Botão Perfil -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        app:backgroundTint="#C1CFDA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.369"
@@ -70,18 +147,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.973"
         app:rippleColor="@android:color/transparent"
-        app:backgroundTint="#C1CFDA"
         app:srcCompat="@drawable/prof1" />
-
-    <!-- Imagens e título -->
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="107dp"
         android:layout_height="142dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.461"
@@ -119,7 +193,7 @@
         app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758"
+        app:layout_constraintVertical_bias="0.803"
         app:srcCompat="@drawable/eaqa" />
 
     <ImageView
@@ -130,7 +204,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758"
+        app:layout_constraintVertical_bias="0.803"
         app:srcCompat="@drawable/ovqmmv" />
 
     <ImageView
@@ -139,10 +213,10 @@
         android:layout_height="142dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758"
+        app:layout_constraintVertical_bias="0.803"
         app:srcCompat="@drawable/minhavida" />
 
     <TextView
@@ -157,8 +231,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.14" />
-
-    <!-- SearchView inserido -->
 
     <SearchView
         android:id="@+id/searchView"

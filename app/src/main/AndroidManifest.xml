@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookFlix">
         <activity
+            android:name=".mvfs"
+            android:exported="false" />
+        <activity
+            android:name=".ovqmmv"
+            android:exported="false" />
+        <activity
+            android:name=".eaqa"
+            android:exported="false" />
+        <activity
+            android:name=".eaqc"
+            android:exported="false" />
+        <activity
+            android:name=".seteMaridos"
+            android:exported="false" />
+        <activity
+            android:name=".verity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

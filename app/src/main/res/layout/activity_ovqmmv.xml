@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ovqmmv">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="282dp"
+        android:layout_height="265dp"
+        android:text="A Trilogia *Verão*, de Jenny Han, acompanha o amadurecimento de Belly dos 15 aos 24 anos, explorando seus amores, desilusões e escolhas difíceis. Todo verão, ela viaja com a família para Cousins Beach, onde reencontra Susannah e seus filhos, Conrad e Jeremiah. Apaixonada por Conrad há anos, Belly começa a perceber que seus sentimentos podem mudar quando Jeremiah passa a demonstrar interesse por ela. Entre descobertas e emoções, esse verão promete transformar sua vida para sempre. "
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="216dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
