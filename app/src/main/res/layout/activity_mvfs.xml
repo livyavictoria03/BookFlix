@@ -16,4 +16,12 @@
         android:textAllCaps="false"
         tools:layout_editor_absoluteX="74dp"
         tools:layout_editor_absoluteY="216dp" />
+
+    <Button
+        android:id="@+id/botaoSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar Livro"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="534dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

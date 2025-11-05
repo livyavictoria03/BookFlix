@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookFlix">
         <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LivrosSalvosActivity"
+            android:exported="false" />
+        <activity
             android:name=".mvfs"
             android:exported="false" />
         <activity

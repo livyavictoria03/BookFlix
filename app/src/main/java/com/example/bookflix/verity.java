@@ -1,6 +1,8 @@
 package com.example.bookflix;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,14 @@ public class verity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_verity);
+
+        // Botão "Salvar Livro"
+        Button botaoSalvar6 = findViewById(R.id.botaoSalvar6);
+        botaoSalvar6.setOnClickListener(v -> {
+            Toast.makeText(verity.this, "Livro salvo com sucesso!", Toast.LENGTH_SHORT).show();
+        });
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
