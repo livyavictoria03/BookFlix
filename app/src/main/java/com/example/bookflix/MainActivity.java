@@ -3,10 +3,12 @@ package com.example.bookflix;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.SearchView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -14,9 +16,21 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    private SearchView searchView;
+    private ListView listSugestoes;
+    private ArrayAdapter<String> sugestoesAdapter;
+
+    private final List<String> todosTitulos = new ArrayList<>();
+    private final List<String> filtrados = new ArrayList<>();
+    private final Map<String, Class<?>> mapaTituloActivity = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,56 +38,75 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Botão Verity
+        // mapear título -> activity
+        mapaTituloActivity.put("Verity", verity.class);
+        mapaTituloActivity.put("Os Sete Maridos de Evelyn Hugo", seteMaridos.class);
+        mapaTituloActivity.put("É Assim que Começa", eaqc.class);
+        mapaTituloActivity.put("É Assim que Acaba", eaqa.class);
+        mapaTituloActivity.put("O Verão Que Mudou a Minha Vida", ovqmmv.class);
+        mapaTituloActivity.put("Minha Vida Fora de Série", mvfs.class);
+
+        // carregar títulos do banco
+        LivrosDao livrosDao = new LivrosDao(this);
+        todosTitulos.clear();
+        todosTitulos.addAll(livrosDao.listarTitulos());
+
+        // busca/sugestões
+        searchView = findViewById(R.id.searchView);
+        listSugestoes = findViewById(R.id.listSugestoes);
+
+        // usa layout personalizado item_sugestao.xml
+        sugestoesAdapter = new ArrayAdapter<>(
+                this,
+                R.layout.item_sugestao,   // layout do item
+                R.id.txtItem,             // id do TextView dentro do layout
+                filtrados                 // lista de dados
+        );
+        listSugestoes.setAdapter(sugestoesAdapter);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                abrirSeExistir(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filtrar(newText);
+                return true;
+            }
+        });
+
+        listSugestoes.setOnItemClickListener((parent, view, position, id) -> {
+            String titulo = filtrados.get(position);
+            abrirSeExistir(titulo);
+        });
+
+        // botões para cada livro
         Button verityButton = findViewById(R.id.verity);
-        verityButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, verity.class);
-            startActivity(intent);
-        });
+        verityButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, verity.class)));
 
-        // Botão Os Sete Maridos
         Button os7mButton = findViewById(R.id.os7m);
-        os7mButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, seteMaridos.class);
-            startActivity(intent);
-        });
+        os7mButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, seteMaridos.class)));
 
-        // Botão É Assim Que Começa
         Button eaqcButton = findViewById(R.id.eaqc);
-        eaqcButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, eaqc.class);
-            startActivity(intent);
-        });
+        eaqcButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, eaqc.class)));
 
-        // Botão É Assim Que Acaba
         Button eaqaButton = findViewById(R.id.eaqa);
-        eaqaButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, eaqa.class);
-            startActivity(intent);
-        });
+        eaqaButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, eaqa.class)));
 
-        // Botão O Vilão Que Me Morde
         Button ovqmmvButton = findViewById(R.id.ovqmmv);
-        ovqmmvButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ovqmmv.class);
-            startActivity(intent);
-        });
+        ovqmmvButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ovqmmv.class)));
 
-        // Botão Minha Vida Fora de Série
         Button mvfsButton = findViewById(R.id.mvfs);
-        mvfsButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, mvfs.class);
-            startActivity(intent);
-        });
+        mvfsButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, mvfs.class)));
 
-        // Botão "+" (Livros Salvos)
+        // FAB "+"
         FloatingActionButton botaoMais = findViewById(R.id.floatingActionButton9);
-        botaoMais.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, LivrosSalvosActivity.class);
-            startActivity(intent);
-        });
+        botaoMais.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, LivrosSalvosActivity.class)));
 
-        // Botão de Notificação (sininho)
+        // FAB sino (dicas)
         FloatingActionButton sino = findViewById(R.id.floatingActionButton8);
         sino.setOnClickListener(v -> {
             String[] dicas = {
@@ -83,73 +116,77 @@ public class MainActivity extends AppCompatActivity {
                     "Dica: Faça anotações enquanto lê para fixar melhor as ideias ✍️",
                     "Curiosidade: O primeiro livro impresso no mundo foi a Bíblia de Gutenberg 📜",
                     "Dica: Experimente ler diferentes gêneros literários!",
-                    "Curiosidade: Stephen King escreve todos os dias, até aos fins de semana 👑",
-                    "Dica: Releia seu livro favorito — sempre há algo novo a descobrir 💫",
-                    "Curiosidade: O livro mais traduzido do mundo é a Bíblia 🌍",
-                    "Dica: Use marcadores para guardar suas partes favoritas 📑",
-                    "Curiosidade: O gênero romance surgiu no século XVIII 💕",
-                    "Dica: Ler antes de dormir ajuda a relaxar e dormir melhor 😴",
-                    "Curiosidade: O primeiro e-book foi criado em 1971 💻",
-                    "Dica: Crie metas de leitura mensais 🎯",
-                    "Curiosidade: O maior livro do mundo pesa mais de 1.500 kg!",
-                    "Dica: Participe de clubes de leitura para trocar ideias 📚",
-                    "Curiosidade: 'Harry Potter' foi rejeitado por 12 editoras antes de ser publicado 🧙‍♂️",
-                    "Dica: Leia com fones e uma música leve para relaxar 🎶",
-                    "Curiosidade: O livro mais caro já vendido custou US$ 30,8 milhões 💰",
-                    "Dica: Leia pela manhã — seu cérebro absorve mais cedo 🌅",
-                    "Curiosidade: Agatha Christie é a autora mais traduzida do mundo 🔍",
-                    "Dica: Deixe o celular longe durante a leitura 📵",
-                    "Curiosidade: Machado de Assis aprendeu francês sozinho 🇫🇷",
-                    "Dica: Use um aplicativo para organizar sua lista de leituras 📝",
-                    "Curiosidade: A palavra ‘livro’ vem do latim *liber*, que significa ‘casca de árvore’ 🌳",
-                    "Dica: Troque livros com amigos para descobrir novas histórias 🤝",
-                    "Curiosidade: 'O Pequeno Príncipe' já foi traduzido para mais de 400 idiomas 🌟",
-                    "Dica: Faça um resumo após terminar um livro — ajuda na memória 🧠",
-                    "Curiosidade: O menor livro do mundo tem 22 páginas e mede 0,75 mm 📏",
-                    "Dica: Prefira ler versões físicas de clássicos, é uma experiência única 📗",
-                    "Curiosidade: O primeiro romance moderno foi 'Dom Quixote' ⚔️",
-                    "Dica: Tenha sempre um livro com você — nunca se sabe quando terá tempo ⏳",
-                    "Curiosidade: O Japão é o país que mais publica livros por ano 📈",
-                    "Dica: Experimente ler em voz alta — ajuda na compreensão 🗣️",
                     "Curiosidade: 'O Senhor dos Anéis' levou 12 anos para ser escrito ⛰️",
                     "Dica: Releia livros que marcaram sua infância 👶",
-                    "Curiosidade: O autor de 'Sherlock Holmes' também era médico 👨‍⚕️",
-                    "Dica: Escolha livros com temas que você ama 💖",
-                    "Curiosidade: 'O Alquimista' é o livro brasileiro mais vendido no mundo 🌍",
-                    "Dica: Não tenha pressa — o importante é aproveitar a leitura 🕰️",
-                    "Curiosidade: 'Guerra e Paz' tem mais de 500 mil palavras 😮",
-                    "Dica: Tire fotos das suas leituras e compartilhe com amigos 📸",
-                    "Curiosidade: O primeiro romance escrito por uma mulher é de 1000 d.C. 👩‍💻",
-                    "Dica: Tenha um cantinho especial só para ler 🛋️",
-                    "Curiosidade: Ler reduz o estresse em até 68% 😌",
-                    "Dica: Intercale leituras leves com livros mais densos ⚖️",
-                    "Curiosidade: O livro mais longo do mundo tem 9.609.000 caracteres!",
-                    "Dica: Evite ler cansado — o foco é essencial 💤",
-                    "Curiosidade: 'Cem Anos de Solidão' levou 18 meses para ser escrito 🌻",
-                    "Dica: Leitura constante melhora sua escrita ✍️"
             };
-
             String dica = dicas[new Random().nextInt(dicas.length)];
-
-            new AlertDialog.Builder(MainActivity.this)
+            new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this)
                     .setTitle("📚 BookFlix · Dica Literária")
                     .setMessage(dica)
                     .setPositiveButton("OK", null)
                     .show();
         });
 
-        // Botão de Perfil (abre PerfilActivity)
+        // FAB perfil
         FloatingActionButton botaoPerfil = findViewById(R.id.floatingActionButton13);
-        botaoPerfil.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
-            startActivity(intent);
-        });
+        botaoPerfil.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, PerfilActivity.class)));
 
-        // Ajuste de layout Edge-to-Edge
+        // Edge-to-Edge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    // ------- BUSCA -------
+    private void filtrar(String texto) {
+        filtrados.clear();
+        if (texto == null || texto.trim().isEmpty()) {
+            listSugestoes.setVisibility(View.GONE);
+            sugestoesAdapter.notifyDataSetChanged();
+            return;
+        }
+        String q = normalizar(texto);
+        for (String t : todosTitulos) {
+            if (normalizar(t).contains(q)) {
+                filtrados.add(t);
+            }
+        }
+        listSugestoes.setVisibility(filtrados.isEmpty() ? View.GONE : View.VISIBLE);
+        sugestoesAdapter.notifyDataSetChanged();
+    }
+
+    private void abrirSeExistir(String tituloDigitado) {
+        if (tituloDigitado == null) return;
+        for (String key : mapaTituloActivity.keySet()) {
+            if (normalizar(key).equals(normalizar(tituloDigitado))) {
+                abrir(key);
+                return;
+            }
+        }
+        if (!filtrados.isEmpty()) {
+            abrir(filtrados.get(0));
+        }
+    }
+
+    private void abrir(String titulo) {
+        Class<?> destino = mapaTituloActivity.get(titulo);
+        if (destino != null) {
+            startActivity(new Intent(MainActivity.this, destino));
+            searchView.clearFocus();
+            listSugestoes.setVisibility(View.GONE);
+        }
+    }
+
+    private static String normalizar(String s) {
+        String out = s.toLowerCase();
+        out = out.replace("á", "a").replace("à", "a").replace("â", "a").replace("ã", "a")
+                .replace("é", "e").replace("ê", "e")
+                .replace("í", "i")
+                .replace("ó", "o").replace("ô", "o").replace("õ", "o")
+                .replace("ú", "u")
+                .replace("ç", "c");
+        return out;
     }
 }

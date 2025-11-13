@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -7,147 +8,81 @@
     android:background="#C1CFDA"
     tools:context=".MainActivity">
 
-    <!-- ==== BOTÕES "SAIBA MAIS" CORRIGIDOS ==== -->
+    <!-- ==== BOTÕES "SAIBA MAIS" ==== -->
 
-    <!-- Botão para o livro "Verity" (ligado à imageView2) -->
     <Button
         android:id="@+id/verity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
         android:text="Saiba Mais"
-        android:textColor="#000000 "
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <!-- Botão para o livro "Os Sete Maridos..." (ligado à imageView3) -->
     <Button
         android:id="@+id/os7m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
         android:text="Saiba Mais"
-        android:textColor="#000000 "
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-    <!-- Botão para o livro "É Assim Que Começa" (ligado à imageView4) -->
     <Button
         android:id="@+id/eaqc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
         android:text="Saiba Mais"
-        android:textColor="#000000 "
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-    <!-- Botão para o livro "É Assim Que Acaba" (ligado à imageView5) -->
     <Button
         android:id="@+id/eaqa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
         android:text="Saiba Mais"
-        android:textColor="#000000 "
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView5"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <!-- Botão para o livro "O Vilão Que Me Morde" (ligado à imageView6) -->
     <Button
         android:id="@+id/ovqmmv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
         android:text="Saiba Mais"
-        android:textColor="#000000 "
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-    <!-- Botão para o livro "Minha Vida Fora de Série" (ligado à imageView7) -->
     <Button
         android:id="@+id/mvfs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
         android:text="Saiba Mais"
-        android:textColor="#000000 "
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
-
-    <!-- ==== RESTANTE DO SEU LAYOUT (sem alterações) ==== -->
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/botaoHome"
-        android:layout_width="55dp"
-        android:layout_height="62dp"
-        android:clickable="true"
-        app:backgroundTint="#C1CFDA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
-        app:rippleColor="@android:color/transparent"
-        app:srcCompat="@drawable/botao1" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="312dp"
-        android:clickable="true"
-        app:backgroundTint="#C1CFDA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
-        app:rippleColor="@android:color/transparent"
-        app:srcCompat="@android:drawable/ic_popup_reminder" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:backgroundTint="#C1CFDA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973"
-        app:rippleColor="@android:color/transparent"
-        app:srcCompat="@android:drawable/ic_menu_add" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:backgroundTint="#C1CFDA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973"
-        app:rippleColor="@android:color/transparent"
-        app:srcCompat="@drawable/prof1" />
+    <!-- ==== CAPAS ==== -->
 
     <ImageView
         android:id="@+id/imageView2"
@@ -219,6 +154,8 @@
         app:layout_constraintVertical_bias="0.803"
         app:srcCompat="@drawable/minhavida" />
 
+    <!-- ==== CABEÇALHO ==== -->
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="243dp"
@@ -245,6 +182,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <ListView
+        android:id="@+id/listSugestoes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:padding="8dp"
+        android:divider="#DDDDDD"
+        android:dividerHeight="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="140dp"
@@ -256,5 +207,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.107"
         app:srcCompat="@drawable/_261122_book_icon_black_symbol_isolate_on_white_background_vector_illustration_vetor_removebg_preview" />
+
+    <!-- ==== FABs ALINHADOS ==== -->
+
+    <LinearLayout
+        android:id="@+id/layoutFABs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_margin="12dp"
+            app:backgroundTint="#C1CFDA"
+            app:rippleColor="@android:color/transparent"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_margin="12dp"
+            app:backgroundTint="#C1CFDA"
+            app:rippleColor="@android:color/transparent"
+            app:srcCompat="@drawable/prof1" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_margin="12dp"
+            app:backgroundTint="#C1CFDA"
+            app:rippleColor="@android:color/transparent"
+            app:srcCompat="@android:drawable/ic_popup_reminder" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

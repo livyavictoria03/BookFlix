@@ -18,16 +18,16 @@ public class verity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_verity);
 
-        // Botão "Salvar Livro"
+        SalvosDao salvosDao = new SalvosDao(this);
         Button botaoSalvar6 = findViewById(R.id.botaoSalvar6);
         botaoSalvar6.setOnClickListener(v -> {
-            Toast.makeText(verity.this, "Livro salvo com sucesso!", Toast.LENGTH_SHORT).show();
+            boolean ok = salvosDao.inserirPorTitulo("Verity");
+            Toast.makeText(this, ok ? "Livro salvo com sucesso!" : "Este livro já estava salvo.", Toast.LENGTH_SHORT).show();
         });
 
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (vv, insets) -> {
+            Insets s = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            vv.setPadding(s.left, s.top, s.right, s.bottom);
             return insets;
         });
     }

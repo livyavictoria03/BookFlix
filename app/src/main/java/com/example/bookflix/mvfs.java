@@ -18,16 +18,16 @@ public class mvfs extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_mvfs);
 
-        // Configura o botão de salvar livro
+        SalvosDao salvosDao = new SalvosDao(this);
         Button botaoSalvar = findViewById(R.id.botaoSalvar);
         botaoSalvar.setOnClickListener(v -> {
-            Toast.makeText(mvfs.this, "Livro salvo com sucesso!", Toast.LENGTH_SHORT).show();
+            boolean ok = salvosDao.inserirPorTitulo("Minha Vida Fora de Série");
+            Toast.makeText(this, ok ? "Livro salvo com sucesso!" : "Este livro já estava salvo.", Toast.LENGTH_SHORT).show();
         });
 
-        // Mantém o ajuste de margens do EdgeToEdge
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (vv, insets) -> {
+            Insets s = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            vv.setPadding(s.left, s.top, s.right, s.bottom);
             return insets;
         });
     }
