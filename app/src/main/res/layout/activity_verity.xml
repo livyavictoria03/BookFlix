@@ -1,27 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/verity2"
     tools:context=".verity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="282dp"
-        android:layout_height="265dp"
-        android:text="Lowen Ashleigh, uma escritora em dificuldades financeiras, aceita completar os livros de Verity Crawford, uma famosa autora incapacitada após um acidente. Ao se mudar para a casa da família para estudar as anotações de Verity, Lowen encontra uma autobiografia secreta com confissões perturbadoras, incluindo detalhes sobre a morte da filha da autora. Chocada, ela esconde o manuscrito de Jeremy, marido de Verity, mas, conforme se envolve emocionalmente com ele, começa a questionar se deve revelar a verdade que pode destruir sua visão sobre a esposa. "
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="216dp" />
+    <!-- Imagem de fundo preenchendo toda a tela -->
+
+    <!-- Texto da descrição -->
+
+    <!-- Botão Salvar -->
+
+    <ImageView
+        android:id="@+id/fundo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/botaoSalvar6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
         android:text="Salvar Livro"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="531dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:justificationMode="inter_word"
+        android:text="Verity&quot; é um thriller psicológico sobre a escritora Lowen Ashleigh, contratada para terminar a série de livros da famosa autora Verity Crawford, que está em coma após um acidente. Ao investigar os manuscritos de Verity em sua casa, Lowen encontra uma autobiografia chocante que revela segredos sombrios e perturbadores sobre sua vida, incluindo o que aconteceu com suas filhas. A narrativa explora o que é verdade e o que é mentira, e o mistério se intensifica com a crescente atração entre Lowen e o marido de Verity, Jeremy. "
+        android:textColor="#F8F0F0"
+        android:textColorHighlight="#EDE3E3"
+        android:textColorLink="#EDE3E3"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fundo"
+        app:layout_constraintVertical_bias="0.765" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SINOPSE"
+        android:textColor="#F4ECEC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fundo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141"
+        app:srcCompat="@drawable/verity" />
+
+    <!-- Imagem pequena do livro -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
