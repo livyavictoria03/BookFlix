@@ -10,6 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class seteMaridos extends AppCompatActivity {
 
     @Override
@@ -24,6 +26,10 @@ public class seteMaridos extends AppCompatActivity {
             boolean ok = salvosDao.inserirPorTitulo("Os Sete Maridos de Evelyn Hugo");
             Toast.makeText(this, ok ? "Livro salvo com sucesso!" : "Este livro já estava salvo.", Toast.LENGTH_SHORT).show();
         });
+
+        // Botão Home
+        FloatingActionButton fabHome = findViewById(R.id.fabHome);
+        fabHome.setOnClickListener(v -> finish());
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (vv, insets) -> {
             Insets s = insets.getInsets(WindowInsetsCompat.Type.systemBars());

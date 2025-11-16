@@ -117,7 +117,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.461"
-        app:srcCompat="@drawable/eaqc" />
+        app:srcCompat="@drawable/eaqc2" />
 
     <ImageView
         android:id="@+id/imageView5"

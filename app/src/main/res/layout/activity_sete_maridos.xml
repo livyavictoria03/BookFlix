@@ -9,11 +9,6 @@
     android:background="@drawable/setefundo"
     tools:context=".seteMaridos">
 
-
-    <!-- Texto principal -->
-
-    <!-- Botão Salvar -->
-
     <Button
         android:id="@+id/botaoSalvar5"
         android:layout_width="wrap_content"
@@ -69,5 +64,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.183"
         app:srcCompat="@drawable/_m" />
+
+    <!-- Botão Home -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="216dp"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@android:color/transparent"
+        app:srcCompat="@drawable/ic_home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
