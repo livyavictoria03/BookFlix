@@ -1,10 +1,13 @@
 package com.example.bookflix;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -25,6 +28,12 @@ public class LivrosSalvosActivity extends AppCompatActivity {
         salvosDao = new SalvosDao(this);
 
         carregarLista();
+
+        // Botão Home
+        FloatingActionButton fabHome = findViewById(R.id.fabHomeSalvos);
+        fabHome.setOnClickListener(v ->
+                startActivity(new Intent(LivrosSalvosActivity.this, MainActivity.class))
+        );
     }
 
     private void carregarLista() {
@@ -40,7 +49,7 @@ public class LivrosSalvosActivity extends AppCompatActivity {
                 .setMessage("Deseja remover \"" + item.getTitulo() + "\" dos salvos?")
                 .setPositiveButton("Excluir", (d, w) -> {
                     salvosDao.excluir(item.getId());
-                    carregarLista(); // recarrega a lista
+                    carregarLista();
                 })
                 .setNegativeButton("Cancelar", null)
                 .show();

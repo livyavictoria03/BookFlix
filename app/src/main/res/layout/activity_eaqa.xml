@@ -12,24 +12,25 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="428dp"
+        android:layout_marginBottom="416dp"
         android:text="SINOPSE"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/botaoSalvar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="80dp"
         android:text="Salvar Livro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -41,12 +42,13 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="105dp"
         android:background="#00E4CDE4"
+        android:justificationMode="inter_word"
         android:text="Em É Assim que Acaba, Colleen Hoover conta a história de Lily, uma jovem que deixa sua cidade natal para começar uma nova vida em Boston, onde abre uma floricultura e conhece Ryle, um neurocirurgião encantador, porém com um lado obscuro. O relacionamento entre eles, inicialmente apaixonante, torna-se conturbado e doloroso, levando Lily a enfrentar decisões difíceis sobre amor, abuso e autovalorização. Inspirado em experiências pessoais da autora, o livro retrata com sensibilidade e coragem a complexidade das relações tóxicas e a força necessária para romper ciclos de violência."
         android:textColor="#040303"
         android:textSize="14sp"
-        android:justificationMode="inter_word"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:layout_constraintVertical_bias="0.0" />
@@ -78,11 +80,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="216dp"
+        android:layout_marginBottom="16dp"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="@android:color/transparent"
         app:srcCompat="@drawable/ic_home" />
 </androidx.constraintlayout.widget.ConstraintLayout>

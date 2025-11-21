@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:background="@drawable/azul2"
     android:layout_height="match_parent"
     tools:context=".ovqmmv">
+
+    <!-- Botão Home -->
 
     <TextView
         android:id="@+id/textView3"
@@ -14,28 +17,66 @@
         android:text="A Trilogia Verão, de Jenny Han, acompanha o amadurecimento de Belly dos 15 aos 24 anos, explorando seus amores, desilusões e escolhas difíceis. Todo verão, ela viaja com a família para Cousins Beach, onde reencontra Susannah e seus filhos, Conrad e Jeremiah. Apaixonada por Conrad há anos, Belly começa a perceber que seus sentimentos podem mudar quando Jeremiah passa a demonstrar interesse por ela. Entre descobertas e emoções, esse verão promete transformar sua vida para sempre. "
         android:textAlignment="viewStart"
         android:textAllCaps="false"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="216dp" />
+        android:textColor="#F6EEEE"
+        android:textColorLink="@color/white"
+        android:justificationMode="inter_word"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796" />
 
     <Button
         android:id="@+id/botaoSalvar4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salvar Livro"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="524dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.882" />
 
-    <!-- Botão Home -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="216dp"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:rippleColor="@android:color/transparent"
         app:srcCompat="@drawable/ic_home" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="380dp"
+        android:text="SINOPSE"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="212dp"
+        android:layout_height="353dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086"
+        app:srcCompat="@drawable/ovqmmv" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

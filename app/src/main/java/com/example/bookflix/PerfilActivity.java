@@ -1,9 +1,11 @@
 package com.example.bookflix;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +23,11 @@ public class PerfilActivity extends AppCompatActivity {
         etNome = findViewById(R.id.etNome);
         etDescricao = findViewById(R.id.etDescricao);
         btnSalvar = findViewById(R.id.btnSalvar);
+
+        // ----- HOME -----
+        findViewById(R.id.fabHomePerfil).setOnClickListener(v ->
+                startActivity(new Intent(PerfilActivity.this, MainActivity.class))
+        );
 
         SharedPreferences prefs = getSharedPreferences("PerfilUsuario", MODE_PRIVATE);
         etNome.setText(prefs.getString("nome", ""));

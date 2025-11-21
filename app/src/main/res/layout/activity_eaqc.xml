@@ -8,38 +8,76 @@
     android:background="@drawable/fundoeaqc"
     tools:context=".eaqc">
 
+    <!-- Botão Home -->
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="282dp"
         android:layout_height="265dp"
+        android:justificationMode="inter_word"
         android:text="Em É Assim que Começa, Lily Bloom tenta seguir em frente após o divórcio de Ryle, seu ex-marido abusivo, enquanto administra sua floricultura e cuida da filha, Emerson. Ao reencontrar Atlas, seu antigo amor, ela vê a chance de recomeçar, mas precisa enfrentar a resistência de Ryle, que não aceita vê-la com outro homem — especialmente com Atlas. Narrado pelos dois protagonistas, o livro revela o passado de Atlas e mostra a luta de Lily para viver um novo amor, equilibrando coragem, superação e segundas chances. "
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="#050505"
-        android:justificationMode="inter_word"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="378dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
+
 
     <Button
         android:id="@+id/botaoSalvar3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salvar Livro"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="654dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.894" />
 
-    <!-- Botão Home -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="216dp"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:rippleColor="@android:color/transparent"
         app:srcCompat="@drawable/ic_home" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="294dp"
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109"
+        app:srcCompat="@drawable/eaqc2" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="400dp"
+        android:text="SINOPSE"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
