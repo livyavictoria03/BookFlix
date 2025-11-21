@@ -1,6 +1,4 @@
 # BookFlix1
-
-BookFlix – Aplicativo Android
 Integrantes
 
 Lívya Victória Pereira Ferreira e Daniely de Sá Cadette
